@@ -2,12 +2,7 @@ var express = require('express');
 var router = express.Router();
 var { spawn } = require('child_process');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-	res.send('Hello world!');
-});
-
-router.post('/q', function(req, res, next) {
+router.post('/', function(req, res, next) {
 	if (!req.body) {
 		res.status(400).end('Invalid Request');
 		return;
