@@ -16,7 +16,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 var limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
