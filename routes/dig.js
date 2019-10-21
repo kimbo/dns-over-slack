@@ -32,7 +32,9 @@ router.post('/', function(req, res, next) {
 				output = 'No answer';
 			}
 		}
-		output = output.replace(/; <<>> DiG .* <<>> .*/, '').replace(/;; global options: .*/, '');
+		output = output
+			.replace(/; <<>> DiG .* <<>>/, '')
+			.replace(/;; global options: .*/, '');
 		res.send(output);
 	});
 });

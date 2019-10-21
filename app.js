@@ -4,7 +4,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var rateLimit = require("express-rate-limit");
 
-var qRouter = require('./routes/q');
+var digRouter = require('./routes/dig');
+var authRouter = require('./routes/auth');
 var slackVerifyMiddleware = require('./slack');
 
 var app = express();
@@ -22,7 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/dig', slackVerifyMiddleware);
-app.use('/dig', qRouter);
+app.use(slackVerifyMiddleware);
+app.use('/dig', digRouter);
+app.use('/dig', authRouter);
 
 module.exports = app;
