@@ -1,20 +1,19 @@
-# q
+# dns-over-slack
 
-This is for a slash command on slack to perform DNS lookups. 
+This is for a slash command to perform DNS lookups on Slack.
 
 It's essentially a little express app API for `dig`.
 
-# Starting the app
-
-```
-npm start
-```
-That will start up a little express server on http://myserver:3000. 
-
-Set up your slack app to point to http://myserver:3000/q.
-
 # Example usage on slack
+Usage is identical to that of `dig`.
 
+If you're unfamiliar with dig, run:
 ```
-/q example.com +short
+/dig -h
 ```
+
+To lookup example.com and just print the answer section:
+```
+/dig +short example.com
+```
+
