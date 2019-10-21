@@ -31,6 +31,8 @@ router.post('/', function(req, res, next) {
 			} else {
 				output = 'No answer';
 			}
+		} else {
+			output = output.replace(/; <<>> DiG .* <<>> .*/, '').replace(/;; global options: .*/, '');
 		}
 		res.send(output);
 	});
