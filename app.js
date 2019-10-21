@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', slackVerifyMiddleware);
-app.use('/', qRouter);
+app.use('/dig', slackVerifyMiddleware);
+app.use('/dig', qRouter);
 
 module.exports = app;
