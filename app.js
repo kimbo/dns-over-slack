@@ -5,7 +5,6 @@ var logger = require('morgan');
 var rateLimit = require("express-rate-limit");
 
 var digRouter = require('./routes/dig');
-var authRouter = require('./routes/auth');
 var slackVerifyMiddleware = require('./slack');
 
 var app = express();
@@ -25,6 +24,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(slackVerifyMiddleware);
 app.use('/dig', digRouter);
-app.use('/dig', authRouter);
 
 module.exports = app;
